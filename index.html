@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Wife Day ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+      z-index: 1;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .typing {
+      font-size: 1.2em;
+      color: #333;
+      border-right: 2px solid #ff4d6d;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 6s steps(60, end) forwards, blink 0.7s infinite;
+    }
+
+    img {
+      margin-top: 20px;
+      max-width: 180px;
+      border-radius: 50%;
+      box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Gift Card */
+    .gift {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff3f5;
+      border: 2px dashed #ff4d6d;
+      border-radius: 15px;
+      font-size: 1.2em;
+      color: #444;
+      display: none;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    .gift strong {
+      color: #ff1744;
+      font-size: 1.4em;
+    }
+
+    .showGift {
+      display: block !important;
+      animation: popIn 1s forwards;
+    }
+
+    .reveal-btn {
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: 0.3s;
+    }
+
+    .reveal-btn:hover {
+      background: #e60033;
+    }
+
+    /* Animations */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      60% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Floating hearts */
+    .hearts span {
+      position: absolute;
+      bottom: -50px;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: rise 6s linear infinite;
+    }
+    .hearts span::before,
+    .hearts span::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .hearts span::before { top: -10px; left: 0; }
+    .hearts span::after { left: -10px; top: 0; }
+    @keyframes rise {
+      0% { transform: translateY(0) scale(0.8) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-700px) scale(1.5) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Hearts -->
+  <div class="hearts">
+    <span style="left:10%"></span>
+    <span style="left:30%"></span>
+    <span style="left:50%"></span>
+    <span style="left:70%"></span>
+    <span style="left:90%"></span>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>💖 Happy Wife Day 💖</h1>
+    <p class="typing">Meri jaan, chahe hum door ho, tum meri rooh ke sabse kareeb ho. I love you forever ❤️</p>
+    <img src="your-photo.jpg" alt="My Love">
+
+    <!-- Reveal Button -->
+    <button class="reveal-btn" onclick="revealGift()">🎁 Click to Open Your Surprise</button>
+
+    <!-- Hidden Gift -->
+    <div class="gift" id="giftBox">
+      🎁 A special surprise for you:<br>
+      <strong>Google Play Gift Card: XXXXX-XXXXX-XXXXX</strong>
+    </div>
+  </div>
+
+  <script>
+    function revealGift() {
+      document.getElementById("giftBox").classList.add("showGift");
+    }
+  </script>
+</body>
+</html>
